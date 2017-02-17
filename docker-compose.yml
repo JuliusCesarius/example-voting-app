@@ -6,22 +6,15 @@ services:
     command: python app.py
     ports:
       - "5000:80"
-    links:
-      - redis
 
   result:
     build: ./result
     command: nodemon --debug server.js
     ports:
       - "5001:80"
-    links:
-      - db
 
   worker:
     build: ./worker
-    links:
-      - db
-      - redis
 
   redis:
     image: redis:alpine
