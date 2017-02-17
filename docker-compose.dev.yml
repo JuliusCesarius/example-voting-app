@@ -25,9 +25,7 @@ services:
       - back-tier
 
   worker:
-    build:
-      context: ./worker
-      dockerfile: Dockerfile.j
+    build: ./worker
     networks:
       - back-tier
 
